@@ -141,3 +141,13 @@ Avatar.defaultProps = {
   src: null,
   size: 'medium',
 };
+
+const Template = args => <Avatar {...args} />;
+
+export const Controls = Template.bind({});
+Controls.args = {
+  loading: false,
+  size: 'tiny',
+  username: 'Dominic Nguyen',
+  src: 'https://avatars2.githubusercontent.com/u/263385',
+};
