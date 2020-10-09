@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs/blocks';
 import { Badge } from './Badge';
 import { Icon } from './Icon';
 
@@ -21,6 +21,16 @@ import { Icon } from './Icon';
     <Badge status="warning">Warning</Badge>
   </div>
 </Story>
+
+### Preview and ArgsTable
+
+<Preview withToolbar>
+  <Story name="initial">
+    <Badge status="neutral">Initial</Badge>
+  </Story>
+</Preview>
+
+<ArgsTable of={Badge} />
 
 ### Positive Badge
 
@@ -85,3 +95,4 @@ export const Template = (args) => <Badge {...args} >Playground</Badge>
     {Template.bind({})}
   </Story>
 </Canvas>
+
