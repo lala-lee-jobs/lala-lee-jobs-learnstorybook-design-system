@@ -56,12 +56,15 @@ const BadgeWrapper = styled.div`
 `;
 
 /**
- * **Badges?!** We don't need no stinkin' badges!!
+ * Use **Badge** to label something meaningful
  */
 export function Badge({ ...props }) {
   return <BadgeWrapper {...props} />;
 }
 Badge.propTypes = {
+  /**
+   * The string of the Badge status
+   */
   status: PropTypes.oneOf(['positive', 'negative', 'neutral', 'error', 'warning']),
 };
 

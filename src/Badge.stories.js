@@ -5,6 +5,9 @@ import { Icon } from './Icon';
 export default {
   title: 'Design System/Badge',
   component: Badge,
+  parameters: {
+    componentSubtitle: 'Displays meaningful label',
+  },  
 };
 
 export const AllBadges = (args) =>(
@@ -25,6 +28,13 @@ AllBadges.args={
   icon:'facehappy',
   inline:true
 }
+
+AllBadges.parameters = {
+  docs: {
+    // The story now contains a description
+    storyDescription: '6 status are supported.',
+  },
+};
 
 AllBadges.storyName = 'all badges';
 
