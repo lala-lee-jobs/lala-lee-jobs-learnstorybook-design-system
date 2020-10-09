@@ -1,5 +1,23 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Badge } from './Badge';
+import { Icon } from './Icon';
 
 <Meta title="Design System/Badge" component={Badge} />
 
+# Badge
+
+## 顯示有意義的標識
+
+### All Badges
+
+5 basic status are supported.
+
+<Story name="All Badges">
+  <div>
+    <Badge status="positive">Positive</Badge>
+    <Badge status="negative">Negative</Badge>
+    <Badge status="neutral">Neutral</Badge>
+    <Badge status="error">Error</Badge>
+    <Badge status="warning">Warning</Badge>
+  </div>
+</Story>
