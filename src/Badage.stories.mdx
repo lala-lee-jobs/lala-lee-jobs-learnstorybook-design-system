@@ -71,3 +71,17 @@ import { Icon } from './Icon';
     <Badge status="warning">Warning</Badge>
   </div>
 </Story>
+
+### Playground
+
+用這個 Story 搭配 Controls Addon 在 Canvas 呈現實驗修改的結果
+
+export const Template = (args) => <Badge {...args} >Playground</Badge>
+
+<Canvas>
+  <Story name="controls" args={{
+    status: neutral,
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
