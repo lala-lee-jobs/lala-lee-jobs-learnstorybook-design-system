@@ -2,7 +2,10 @@ import { Meta, Story, Canvas, ArgsTable, Preview } from '@storybook/addon-docs/b
 import { Badge } from './Badge';
 import { Icon } from './Icon';
 
-<Meta title="Design System/Badge" component={Badge} />
+<Meta 
+  title = "Design System/Badge" 
+  component = { Badge }
+/>
 
 # Badge
 
@@ -81,6 +84,28 @@ import { Icon } from './Icon';
     <Badge status="warning">Warning</Badge>
   </div>
 </Story>
+
+### WithIcon Badge
+
+帶有 Icon 的 Badge
+
+export const IconTemplate = (args) => (
+  <div>
+    <Badge {...args} >
+      <Icon {...args} />
+      WithIcon
+    </Badge>
+  </div>
+)
+
+<Story name="With Icon" args={{
+  status: neutral,
+  icon: 'check',
+}}>
+  {IconTemplate.bind({})}
+</Story>
+
+<ArgsTable components = {{ Badge, Icon }} />
 
 ### Playground
 
