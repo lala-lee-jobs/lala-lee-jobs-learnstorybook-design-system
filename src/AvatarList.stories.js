@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
+import { sizes } from './Avatar';
 import { AvatarList } from './AvatarList';
 
 export default {
@@ -32,6 +34,31 @@ const moreuserdata = [
   },
 ];
 
+AvatarList.propTypes = {
+  /**
+   * Are we loading avatar data from the network?
+   */
+  loading: PropTypes.bool,
+  /**
+   * A (sub)-list of the users whose avatars we have data for. Note: only 3 will be displayed.
+   */
+  users: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string,
+      avatarUrl: PropTypes.string,
+    })
+  ),
+  /**
+   * The total number of users, if a subset is passed to `users`.
+   */
+  userCount: PropTypes.number,
+  /**
+   * AvatarList comes in four sizes. In most cases, you’ll be fine with `medium`.
+   */
+  size: PropTypes.oneOf(Object.keys(sizes)),
+};
+
 const Template = (args) => <AvatarList {...args} />;
 
 export const Short = Template.bind({});
@@ -60,11 +87,13 @@ Ellipsized.args = {
 
 export const BigUserCount = Template.bind({});
 BigUserCount.args = {
+  loading: false,
   users: [
     ...userdata,
     ...moreuserdata
   ],
   userCount: 100,
+  size: 'small'
 };
 
 export const Empty = Template.bind({});
